@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0, 65, 65);
+
+    nav {
+        margin-right: 300px;
+    }
+
+    .slider {
+        width: 800px;
+        height: 500px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .slides {
+            width: 500%;
+            height: 500px;
+            display: flex;
+
+            input {
+                display: none;
+            }
+
+            .slide {
+                width: 20%;
+                transition: 2s;
+
+                img {
+                    width: 800px;
+                    height: 500px;
+                }
+            }
+
+
+
+        }
+
+        .navig-manual {
+            position: absolute;
+            width: 800px;
+            margin-top: -40px;
+            display: flex;
+            justify-content: center;
+
+            .manual-btn {
+                border: 2px solid rgb(0, 65, 65);
+                padding: 5px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 1s;
+
+                &:not(:last-child) {
+                    margin-right: 40px;
+                }
+
+                &:hover {
+                    background: rgb(0, 65, 65);
+                }
+
+            }
+        }
+
+        .slides #radio1:checked~.first {
+            margin-left: 0;
+
+        }
+
+        .slides #radio2:checked~.first {
+            margin-left: -20%;
+
+        }
+
+        .slides #radio3:checked~.first {
+            margin-left: -40%;
+
+        }
+
+        .slides #radio4:checked~.first {
+            margin-left: -60%;
+
+        }
+
+        .navig-auto {
+            position: absolute;
+            display: flex;
+            width: 800px;
+            justify-content: center;
+            margin-top: 460px;
+
+            div {
+                border: 2px solid rgb(0, 65, 65);
+                padding: 5px;
+                border-radius: 10px;
+                transition: 1s;
+
+                &:not(:last-child) {
+                    margin-right: 40px;
+                }
+            }
+        }
+
+        .slides #radio1:checked~.navig-auto .auto-btn1 {
+            background: rgb(0, 65, 65);
+        }
+
+        .slides #radio2:checked~.navig-auto .auto-btn2 {
+            background: rgb(0, 65, 65);
+        }
+
+        .slides #radio3:checked~.navig-auto .auto-btn3 {
+            background: rgb(0, 65, 65);
+        }
+
+        .slides #radio4:checked~.navig-auto .auto-btn4 {
+            background: rgb(0, 65, 65);
+        }
+    }
+}

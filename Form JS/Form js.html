@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    
+</head>
+<body>
+    <form action="" id="form">
+        <label for="">salaire de base</label><br>
+        <input type="number" id="salaire"><br><br>
+        <label for="">situation</label><br>
+        <label for="st1">mariee</label> <input type="radio" value="" id="st1" onchange="marieeSalaire()" name="s">
+        <label for="st2">celibataire</label> <input type="radio" value="" id="st2" onchange="celibSalaire()" name="s"> <br><br>
+        <p id="nbr-enfant"></p>
+
+         
+        <p id="show"></p>
+
+
+    </form>
+    <script>
+         
+        function celibSalaire(){
+            var salaire = document.getElementById("salaire").value;
+            var celibataire = document.getElementById("st2");
+
+        if(celibataire.checked == true){
+
+            Salaire = salaire - (salaire*15/100);
+            console.log(Salaire);
+            document.getElementById("show").innerHTML ="Votre Salaire est:  " + Salaire;
+
+          }
+          
+        }
+        
+        
+        function marieeSalaire(){
+            var salaire = document.getElementById("salaire").value;
+            var mariee = document.getElementById("st1");
+            var nbr = document.getElementById("nbr-enfant");
+            var myform = document.getElementById("form")
+
+            if(mariee.checked == true){
+                nbr.innerHTML = "donner le nombre des enfants: " + "<br>"
+                var newinput = document.createElement('input');
+                newinput.type ='number';
+                newinput.id  = 'nombre-enfants'
+                newinput.onchange = 'age()'
+
+                myform.appendChild(newinput);
+
+                
+
+               
+
+            }
+            function age(){
+                var enfants = document.getElementById("nombre-enfants").value;
+                console.log(enfants);
+                for (var i = 0 ; i <= enfants ; i++){
+                    var age = document.createElement('input');
+                    myform.appendChild(age);
+
+                }
+            }
+
+        }
+        
+
+
+        
+       
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

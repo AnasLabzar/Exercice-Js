@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+
+<p>Donner Un Nom </p>
+<input type="text" id="nom" />
+<input type="submit" value="submit" onclick="lnom()" />
+<p id="lnom"></p>
+<button onclick="trier()">Trier</button>
+<p id="trier"></p>
+
+
+<script>
+
+    
+     var listnoms=[];
+
+     function lnom() {
+        nom = document.getElementById("nom").value;
+        listnoms.push(nom);
+        document.getElementById("lnom").innerHTML = listnoms;
+
+    }
+
+    function trier()
+    {
+        const newitems =listnoms.map(name=>name.toUpperCase())
+        newitems.sort();
+        document.getElementById("trier").innerHTML = newitems.join();
+    }
+
+
+</script>
+
+
+</body>
+</html>
